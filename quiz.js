@@ -8,17 +8,25 @@ var quiz, quizStatus, question, choice, choices, answer1, answer2, answer3, answ
 // this var is our "array" of questions, with choices and correct answer
 var timer = document.getElementById("timer");
 var counter = 60;
-var interval = setInterval(function() {
-    counter --;
-    if (counter <= 0) {
-        clearInterval(interval);
-        $('#timer').html("<h3>Count down complete</h3>");  
-        return;
-    } else {
-        $('#timer').text(counter);
-        console.log("Timer --> " + counter);
-    }
-}, 1000);
+function startQuiz(){
+    renderQuestion();
+    //start the countdown and render first question
+    var interval = setInterval(function() {
+        counter --;
+        if (counter <= 0) {
+            clearInterval(interval);
+            $('#timer').html("<h3>Count down complete</h3>");  
+            return;
+        } else {
+            $('#timer').text(counter);
+            console.log("Timer --> " + counter);
+        }
+    }, 1000);
+}
+//addclickevent listener here 
+function setup(){
+    document.getElementById("start-button").addEventListener("click", startQuiz)
+}
 var questions = [
     {
         question: "What does html stand for?",
@@ -104,5 +112,5 @@ function checkAnswer(){
     renderQuestion();
 }
 //this function makes the quiz load through an "evenListener"
-window.addEventListener("load", renderQuestion);
+window.addEventListener("load", setup);
 //so when the "window" loads, it does function(renderQuestion) which displays it on screen
