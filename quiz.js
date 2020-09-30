@@ -54,7 +54,7 @@ function renderQuestion() {
         correct = 0;
         return false;
     }
-    //this function lets me know position of question user is on
+    //this function lets me know number question user is on
     get("quizStatus").innerHTML = "Question " + (position+1) + " of " + questions.length;
     
     question = questions[position].question;
@@ -63,8 +63,8 @@ function renderQuestion() {
     answer3 = questions[position].c;
     answer4 = questions[position].d;
 
-    //this function displays the answer onto the div "quiz"
-    quiz.innerHTML = "<h2>"+question+"</h2>"
+    //this function displays the answers user can choose onto the div "quiz"
+    quiz.innerHTML = "<h1>"+question+"</h1S>"
 
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='A'> "+ answer1 +"</label><br>";
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='B'> "+ answer2 +"</label><br>";
@@ -90,3 +90,4 @@ function checkAnswer(){
 }
 //this function makes the quiz load through an "evenListener"
 window.addEventListener("load", renderQuestion);
+//so when the "window" loads, it does function(renderQuestion) which displays it on screen
