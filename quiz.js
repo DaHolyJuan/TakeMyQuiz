@@ -7,36 +7,36 @@ var quiz, quizStatus, question, choice, choices, answer1, answer2, answer3, answ
 // this var is our "array" of questions, with choices and correct answer
 var questions = [
     {
-        question: "Question 1 will go here!",
-        a: "answer1",
-        b: "answer2",
-        c: "answer3",
-        d: "answer4",
+        question: "What does html stand for?",
+        a: "Hypertext Markup Language",
+        b: "Hypertext Makeup Language",
+        c: "Hypertext Markup Love",
+        d: "Help the Man Louis!",
         answer: "A"
 
     },
     {
-        question: "Question 2 will go here!",
-        a: "answer1",
-        b: "answer2",
-        c: "answer3",   
-        d: "answer4",
+        question: "What is a good source for answers you dont know?",
+        a: "Outside",
+        b: "Google",
+        c: "Sleep",   
+        d: "Going to grab a burger at your local diner",
         answer: "B"
     },
     {
-        question: "question 3 will go here!",
-        a: "answer1",
-        b: "answer2",
-        c: "answer3",
-        d: "answer4",
+        question: "What does css stand for?",
+        a: "Cascading Silence Sheets",
+        b: "Cascading Script Sheeets",
+        c: "Cascading Style Sheets",
+        d: "Cold Sauce Singing",
         answer: "C"
     },
     {
-        question: "question 4 will go here!",
-        a: "answer1",
-        b: "answer2",
-        c: "answer3",
-        d: "answer4",
+        question: "What is the purpose of javaScript",
+        a: "A way to refrence images on the internet in your html",
+        b: "A programming language used to create different styles to your html",
+        c: "A cup of coffee that writes your papers",
+        d: "A programming language used to create dynamic and interactive elements to the user",
         answer: "D"
     }
 ];
