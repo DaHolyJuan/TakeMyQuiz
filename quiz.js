@@ -1,4 +1,3 @@
-// @ts-check
 //this variable is for where the user is at 
 var position = 0;
 //this variable holds how many correct 
@@ -67,7 +66,13 @@ function get(x) {
     return document.getElementById(x);
 }
 
-
+function quizFinish() {
+    //when quiz is finished, timer gets captured
+    var Score = counter
+    document.getElementById("score")
+    get("score").innerHTML = Score
+    //current time of timer >> sumbitted into a log >> prompt to enter their name
+} 
 function renderQuestion() {
     quiz = get("quiz");
     if (position >= questions.length) {
@@ -75,7 +80,9 @@ function renderQuestion() {
         get("quizStatus").innerHTML = "Quiz Finished! You did it!"
         position = 0;
         correct = 0;
+        quizFinish();
         return false;
+        
     }
     //this function lets me know number question user is on
     get("quizStatus").innerHTML = "Question " + (position+1) + " of " + questions.length;
