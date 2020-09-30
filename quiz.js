@@ -1,3 +1,4 @@
+// @ts-check
 //this variable is for where the user is at 
 var position = 0;
 //this variable holds how many correct 
@@ -96,10 +97,10 @@ function checkAnswer(){
       }
     }
 
-    if(choice == questions[pos].answer){
+    if(choice == questions[position].answer){
       correct++;
     }
-    pos++;
+    position++;
     //this function brings the function back to the top until the last question is answered.
     renderQuestion();
 }
