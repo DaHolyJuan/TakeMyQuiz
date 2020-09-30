@@ -55,7 +55,7 @@ function renderQuestion() {
         return false;
     }
     //this function lets me know position of question user is on
-    get("quizStatus").innerHTML = "Question " + (position+1) + " of" + questions.length;
+    get("quizStatus").innerHTML = "Question " + (position+1) + " of " + questions.length;
     
     question = questions[position].question;
     answer1 = questions[position].a;
@@ -68,7 +68,25 @@ function renderQuestion() {
 
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='A'> "+ answer1 +"</label><br>";
     quiz.innerHTML += "<label> <input type='radio' name='choices' value='B'> "+ answer2 +"</label><br>";
-    quiz.innerHTML += "<label> <input type='radio' name='choices' value='C'> "+ answer3 +"</label><br><br>";
+    quiz.innerHTML += "<label> <input type='radio' name='choices' value='C'> "+ answer3 +"</label><br>";
+    quiz.innerHTML += "<label> <input type='radio' name='choices' value='D'> "+ answer4 +"</label><br><br>";
     quiz.innerHTML += "<button onclick='checkAnswer()'>Submit Answer</button>";
 }
 
+function checkAnswer(){
+    choices = document.getElementsByName("choices");
+    for(var i=0; i<choices.length; i++){
+      if(choices[i].checked){
+        choice = choices[i].value;
+      }
+    }
+
+    if(choice == questions[pos].answer){
+      correct++;
+    }
+    pos++;
+    //this function brings the function back to the top until the last question is answered.
+    renderQuestion();
+}
+//this function makes the quiz load through an "evenListener"
+window.addEventListener("load", renderQuestion);
