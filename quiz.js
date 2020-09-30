@@ -5,6 +5,20 @@ var correct = 0;
 //these variables hold the div, header, question, user answer, and "a, b, c, d"
 var quiz, quizStatus, question, choice, choices, answer1, answer2, answer3, answer4;
 // this var is our "array" of questions, with choices and correct answer
+// var timer = document.getElementById(timer);
+// var countDown = 60;
+// var interval = setInterval(function() {
+//     counter --;
+    
+//     if (counter <= 0) {
+//         clearInterval(interval);
+//      $('#timer').html("<h3>Count down complete</h3>");  
+//    return;
+// }else{
+//    $('#time').text(counter);
+//  console.log("Timer --> " + counter);
+// }
+// }, 1000);
 var questions = [
     {
         question: "What does html stand for?",
@@ -44,6 +58,7 @@ var questions = [
 function get(x) {
     return document.getElementById(x);
 }
+
 
 function renderQuestion() {
     quiz = get("quiz");
